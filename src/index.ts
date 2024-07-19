@@ -1,5 +1,5 @@
 import express, { Application, Request, Response, NextFunction } from "express";
-
+import cors from "cors";
 const app: Application = express();
 type usersProp = {
   id: number;
@@ -8,7 +8,11 @@ type usersProp = {
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err);
