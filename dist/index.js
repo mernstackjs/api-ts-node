@@ -14,6 +14,17 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
 });
 app.get("/", (req, res) => {
+    res.status(200).json({
+        success: false,
+        message: "Api is working",
+    });
+});
+app.get("/new/name", (req, res) => {
+    res.status(200).json({
+        name: "Ahmed Abdirizaak",
+    });
+});
+app.get("/users", (req, res) => {
     const users = [
         {
             id: 1,

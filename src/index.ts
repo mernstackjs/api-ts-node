@@ -16,6 +16,17 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get("/", (req: Request, res: Response) => {
+  res.status(200).json({
+    success: false,
+    message: "Api is working",
+  });
+});
+app.get("/new/name", (req: Request, res: Response) => {
+  res.status(200).json({
+    name: "Ahmed Abdirizaak",
+  });
+});
+app.get("/users", (req: Request, res: Response) => {
   const users: usersProp[] = [
     {
       id: 1,
