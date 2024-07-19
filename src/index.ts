@@ -22,7 +22,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({
     success: false,
-    message: "Api is working",
+    message: "Api is working well",
   });
 });
 app.get("/new/name", (req: Request, res: Response) => {
